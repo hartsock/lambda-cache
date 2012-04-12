@@ -1,17 +1,13 @@
 Lambda Cache is a work-for-hire produced for PSS World Medical and distributed under the Apache 2.0 license
 
-It is a proof of concept that an API for ehCache could be injected into an existing code base without the introduction
-of AOP, AspectJ or other meta-programming technologies. Instead we use simple anonymous-inner-class-as-a-lambda
-techniques to make a method cacheable with the introduction of 4 lines of code.
+It is a proof of concept that an API for ehCache could be injected into an existing code base without the introduction of AOP, AspectJ or other meta-programming technologies. Instead we use simple anonymous-inner-class-as-a-lambda techniques to make a method cacheable with the introduction of 4 lines of code.
 
 (The goal was 2 lines of code but that became difficult to accomplish cleanly.)
 
-An example of the simplest use of cache is shown in the test class SimpleCacheUser and features 4 lines of code for
-caching wrapping a simple method.
+An example of the simplest use of cache is shown in the test class SimpleCacheUser and features 4 lines of code for caching wrapping a simple method.
 
 see: src/test/java/com/pssd/cache/SimpleCacheUser.java
 
-Once you can cache using ehCache you now have the possibility of reconfiguring to use Terracotta or other distributed
-cache technologies.
+Once you can cache using ehCache you now have the possibility of reconfiguring to use Terracotta or other distributed cache technologies.
 
 TODO: allow configuration from XML files in classpath to override configurations embedded in classes.
