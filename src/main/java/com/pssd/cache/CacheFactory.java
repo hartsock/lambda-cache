@@ -1,3 +1,20 @@
+/* License added by: GRADLE-LICENSE-PLUGIN
+ *
+ * Copyright (C) 2012 Shawn Hartsock <hartsock@acm.org>
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.pssd.cache;
 
 import com.pssd.cache.errors.ConfigurationFoundButNotAccessableException;
@@ -13,7 +30,11 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 /**
- * The basic idea here is to build caches based on objects.
+ * The basic idea here is to build caches based on objects. You would assemble a POJO that was appropriate for use
+ * as a key in a hash. This would be an object that held all the salient variables for the method. Then you back off
+ * your particular method into an anonymous inner class implementing the CacheableFunction interface.
+ * <p/>
+ * In the testing directory, the class SimpleCacheUser shows one of the simplest ways to use this Caching API.
  * <p/>
  * @author Shawn Hartsock
  */
@@ -21,7 +42,7 @@ public class CacheFactory {
     /**
      * The singleton owner of caches in this system.
      */
-    final static CacheManager cacheManager = new CacheManager();
+    final static CacheManager cacheManager = new CacheManager(); //TODO: allow configuration from XML in classpath
 
     /**
      * builds a CacheConfiguration object based on properties
@@ -190,3 +211,4 @@ public class CacheFactory {
         return result;
     }
 }
+
